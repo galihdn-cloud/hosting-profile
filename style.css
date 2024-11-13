@@ -1,0 +1,174 @@
+/* Reset dan box model */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #1e90ff; /* Blue background */
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 40px;
+    letter-spacing: 1px;
+}
+
+/* Container untuk lebar konsisten */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Konten utama */
+main {
+    padding: 40px 0;
+}
+
+/* Bagian About */
+.about {
+    display: flex;
+    justify-content: center; /* Menyusun gambar dan teks di tengah */
+    align-items: center; /* Menyusun gambar dan teks sejajar */
+    margin-bottom: 50px;
+    flex-wrap: wrap; /* Menyesuaikan layout untuk layar kecil */
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column; /* Menyusun teks di bawah gambar secara vertikal */
+    align-items: flex-start; /* Menjaga teks di sebelah kiri */
+    max-width: 600px;
+    text-align: left; /* Menjaga agar teks diatur ke kiri */
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 300px; /* Memperbesar ukuran gambar */
+    height: 300px; /* Memperbesar ukuran gambar */
+    object-fit: cover;
+    margin-right: 30px; /* Memberikan jarak antara gambar dan teks */
+    margin-bottom: 20px; /* Memberikan jarak di bawah gambar */
+    display: block;
+}
+
+.bio h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.bio p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 1.7; /* Menambah jarak antar paragraf untuk kenyamanan baca */
+}
+
+.social-media {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.social-media h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Menyesuaikan jika layar kecil */
+}
+
+.social-icon {
+    display: inline-block;
+    margin: 10px;
+}
+
+.social-icon img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border-radius: 50%; /* Membuat ikon berbentuk lingkaran */
+}
+
+.social-icon img:hover {
+    transform: scale(1.1);
+}
+
+/* Bagian Gallery */
+.gallery {
+    margin-top: 50px;
+}
+
+.gallery h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.image-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Desain Responsif */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-info {
+        align-items: center; /* Menyusun teks di tengah pada perangkat kecil */
+    }
+
+    .profile-img {
+        margin-right: 0; /* Menghapus jarak kanan */
+        margin-bottom: 20px; /* Memberikan jarak di bawah gambar */
+    }
+
+    .image-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .social-icons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 32px;
+    }
+
+    .gallery h2, .bio h2 {
+        font-size: 24px;
+    }
+
+    .image-gallery {
+        grid-template-columns: 1fr;
+    }
+}
